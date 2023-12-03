@@ -4,21 +4,61 @@
   <title>Add Customer</title>
 </head>
 <body>
-<h1>Add Customer</h1>
-<form>
+<div class="side-bar">
+  <ul>
+    <li><a href="#">Add Customer</a></li>
+    <li><a href="#">Modify Customer</a></li>
+    <li><a href="#">All Customers </a></li>
+    <li><a href="#">Search Customer</a></li>
+    <li><a href="#">Delete Customer</a></li>
+  </ul>
+</div>
+
+<h1><a id="AddCustomer">Add Customer</a></h1>
+<!--form )>-->
+<form #customerPost="ngForm" (ngSubmit)="save(customerPost.value)" >
   <label for="id">ID:</label>
-  <input type="text" id="id" name="id" pattern="[0-9]+" required title="Please enter a numeric value" >
+  <input type="text" id="id" name="id" ngModel pattern="[0-9]+" required title="Please enter a numeric value" >
 
   <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName" required>
+  <input type="text" id="firstName" name="firstName" ngModel required>
 
   <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName" required>
+  <input type="text" id="lastName" name="lastName" ngModel required>
 
   <label for="email">Email:</label>
-  <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required title="Please enter a valid email address" >
+  <input type="email" id="email" name="email" ngModel pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required title="Please enter a valid email address" >
 
-  <input type="submit" value="Submit">
-</form>
+  <button type="submit" >Add</button>
+</form >
+
+<h1><a id="SearchCustomer">Search Customer</a></h1>
+
+<div class="search-container">
+  <label for="searchIdInput">Search Customer:</label>
+  <input type="text" id="searchIdInput" name="searchInput" [(ngModel)]="searchID"  placeholder="Enter id"  >
+  <input type="text" id="searchFirstNameInput" name="searchInput" [(ngModel)]="searchFirstName"  placeholder="Enter First Name" >
+  <input type="text" id="searchLastNameInput" name="searchInput" [(ngModel)]="searchLastName"  placeholder="Enter Last Name" >
+  <input type="text" id="searchEmailInput" name="searchInput" [(ngModel)]="searchEmail"  placeholder="Enter Email" >
+  <input type="button" value="Search"  (click)="searchCustomers()">
+
+</div>
+
+<div class="customer-list">
+  <ul>
+    <li *ngFor="let customer of customers">
+      {{ customer.firstName }} {{ customer.lastName }} - {{ customer.email }}
+    </li>
+  </ul>
+</div>
+<div id="errorMessageContainer">
+  <ul>
+    <li *ngIf="err">
+
+    {{ err.message }} - {{err.code }}
+    </li>
+  </ul>
+</div>
+
 </body>
 </html>

@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  background-color: orange;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-bar h1 {
+  margin: 0;
+}
+
+.top-bar nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.top-bar nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.top-bar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+
+.content {
+  padding: 20px;
+}

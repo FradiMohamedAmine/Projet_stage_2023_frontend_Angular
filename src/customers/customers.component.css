@@ -1,3 +1,26 @@
+
+.side-bar {
+  background-color: #eeaf4e;
+  color: #fff;
+  width: 200px;
+  padding: 20px;
+}
+
+.side-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.side-bar ul li {
+  margin-bottom: 10px;
+}
+
+.side-bar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
 form {
   width: 300px;
   margin: 0 auto;
@@ -10,4 +33,20 @@ label, input {
 
 input[type="submit"] {
   margin-top: 10px;
+}
+/* CSS for the specific div elements */
+.search-container {
+  margin-top: 20px;
+}
+
+.search-container label {
+  font-weight: bold;
+}
+
+.customer-list {
+  margin-top: 20px;
+}
+
+.customer-list li {
+  margin-bottom: 5px;
 }

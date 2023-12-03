@@ -1,0 +1,11 @@
+[{
+  "num": 1,
+  "url" : "http://localhost:6060/addCustomer"
+},
+{
+  "num": 2,
+  "url" : "http://localhost:6060/searchcustomers"
+},{
+  "num": 3,
+  "url" : "http://localhost:6060/customersList"
+}]
